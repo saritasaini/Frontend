@@ -1,0 +1,112 @@
+.marquee-container {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120px);
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to bottom, black 50%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to bottom, black 50%, transparent 95%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 50px;
+  animation: scroll-marquee 80s linear infinite;
+  width: max-content;
+  padding: 0 20px;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  width: 280px;
+  height: 420px;
+  perspective: 2000px;
+}
+
+.marquee-image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: rotate(calc(var(--rotation, 0deg)));
+  transition: transform 0.5s ease;
+}
+
+/* Random-like rotation for items using nth-child */
+.marquee-item:nth-child(even) .marquee-image-wrapper {
+  transform: rotate(6deg) translateY(-20px);
+}
+
+.marquee-item:nth-child(odd) .marquee-image-wrapper {
+  transform: rotate(-6deg) translateY(20px);
+}
+
+.marquee-item:nth-child(3n) .marquee-image-wrapper {
+  transform: rotate(10deg) translateY(-10px);
+}
+
+.marquee-item:nth-child(3n+1) .marquee-image-wrapper {
+  transform: rotate(-5deg) translateY(10px);
+}
+
+.marquee-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    /* Translate by exactly half of the duplicated content width */
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .marquee-container {
+    bottom: 0;
+    height: 300px;
+    transform: translateY(60px);
+  }
+
+  .marquee-item {
+    width: 120px;
+    height: 180px;
+  }
+
+  .marquee-content {
+    gap: 20px;
+    animation-duration: 25s;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-container {
+    height: 250px;
+    transform: translateY(50px);
+  }
+
+  .marquee-item {
+    width: 100px;
+    height: 150px;
+  }
+}
