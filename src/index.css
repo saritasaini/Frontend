@@ -66,7 +66,8 @@ body {
 .hero-glass-box {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
+  /* -webkit-backdrop-filter: blur(var(--glass-blur)); */
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   padding: 60px 50px;
@@ -719,7 +720,8 @@ a:hover {
   }
 
   .brand-text {
-    display: none; /* Hide brand text on mobile to save space */
+    display: none;
+    /* Hide brand text on mobile to save space */
   }
 
   .auth-card {
@@ -764,7 +766,8 @@ a:hover {
   }
 
   .nav-link-user {
-    display: none; /* Hide name on very small screens */
+    display: none;
+    /* Hide name on very small screens */
   }
 
   .product-info {
