@@ -1,0 +1,223 @@
+/* ===== Skew Cards Section ===== */
+.skew-cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 80px 20px;
+  min-height: auto;
+  gap: 50px;
+}
+
+/* Single card wrapper */
+.skew-card {
+  position: relative;
+  width: 300px;
+  min-width: 280px;
+  height: 400px;
+  transition: all 0.5s ease;
+}
+
+/* Skewed gradient panels */
+.skew-card-gradient,
+.skew-card-gradient-blur {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 12px;
+  transform: skewX(15deg);
+  transition: all 0.5s ease;
+}
+
+.skew-card-gradient-blur {
+  filter: blur(30px);
+}
+
+.skew-card:hover .skew-card-gradient,
+.skew-card:hover .skew-card-gradient-blur {
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+}
+
+/* Animated blob circles */
+.skew-card-blobs {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.skew-blob {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 12px;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease;
+}
+
+.skew-blob-top {
+  top: 0;
+  left: 0;
+  animation: blob 2s ease-in-out infinite;
+}
+
+.skew-blob-bottom {
+  bottom: 0;
+  right: 0;
+  animation: blob 2s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.skew-card:hover .skew-blob-top {
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.skew-card:hover .skew-blob-bottom {
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+/* Content panel */
+.skew-card-content {
+  position: relative;
+  z-index: 20;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.skew-card:hover .skew-card-content {
+  left: -25px;
+  padding: 60px 40px;
+}
+
+.skew-card-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.skew-card-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.skew-card-content .skew-card-btn {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #000;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.skew-card-content .skew-card-btn:hover {
+  background: var(--primary-gold, #D4AF37);
+  color: #000;
+  border-color: rgba(255, 0, 88, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Blob animation */
+@keyframes blob {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translate(-10px);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .skew-card {
+    width: 280px;
+    height: 360px;
+    margin: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skew-cards-section {
+    flex-wrap: wrap;
+    padding: 50px 15px;
+  }
+
+  .skew-card {
+    width: 260px;
+    height: 340px;
+    margin: 25px 15px;
+  }
+
+  .skew-card-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .skew-card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skew-cards-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10px;
+  }
+
+  .skew-card {
+    width: 280px;
+    height: 360px;
+    margin: 20px 0;
+  }
+}
+
+/* Targeted tablets (iPad Pro, Zenbook Fold, Surface Pro) */
+@media (min-width: 800px) and (max-width: 1100px) {
+  .skew-cards-section {
+    padding: 40px 15px;
+  }
+
+  .skew-card {
+    width: 250px;
+    height: 320px;
+    margin: 20px 15px;
+  }
+
+  .skew-card-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .skew-card-content p {
+    font-size: 0.85rem;
+  }
+}

@@ -1,7 +1,7 @@
 .marquee-container {
   position: absolute;
   bottom: 0;
-  transform: translateY(120px);
+  transform: translateY(160px);
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -80,12 +80,31 @@
   }
 }
 
+@media (min-width: 800px) and (max-width: 1100px) {
+  .marquee-container {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    height: 500px;
+    margin-top: -80px; /* Slight overlap with glass card */
+    transform: none !important;
+    mask-image: none; /* Prevent image cutting */
+    -webkit-mask-image: none;
+    z-index: 1;
+  }
+
+  .marquee-item {
+    width: 200px;
+    height: 300px;
+  }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .marquee-container {
-    bottom: 0;
+    bottom: 20px;
     height: 300px;
-    transform: translateY(60px);
+    transform: translateY(0);
   }
 
   .marquee-item {
@@ -102,7 +121,7 @@
 @media (max-width: 480px) {
   .marquee-container {
     height: 250px;
-    transform: translateY(50px);
+    transform: translateY(10px);
   }
 
   .marquee-item {

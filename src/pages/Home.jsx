@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FoodMarquee } from '../components/ui/FoodMarquee';
+import SkewCards from '../components/ui/gradient-card-showcase';
+import TeamShowcase from '../components/ui/team-showcase';
 
 
 
@@ -12,7 +14,7 @@ const Home = () => {
           <span style={{ color: 'var(--primary-gold)', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '20px', display: 'block' }}>ESTD. 2015</span>
           <h1 style={{ color: 'var(--text-bright)' }}>Savor the <span>Royal Essence</span> of Coffee</h1>
           <p style={{ color: 'var(--text-main)', opacity: 0.9 }}>Indulge in a symphony of heritage flavors and modern culinary excellence, crafted for the true connoisseur.</p>
-          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '35px' }}>
+          <div className="hero-btns">
             <Link to="/menu" className="btn btn-solid">Explore Menu</Link>
             <Link to="/bookings" className="btn">Reserve a Table</Link>
           </div>
@@ -20,23 +22,20 @@ const Home = () => {
         <FoodMarquee />
       </section>
 
-      <section className="container" style={{ padding: '80px 0' }}>
-        <div className="grid">
-          <div className="glass" style={{ padding: '50px 40px', borderRadius: '30px', textAlign: 'center' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🏛️</div>
-            <h3>Royal Ambiance</h3>
-            <p style={{ color: 'var(--text-muted)', marginTop: '15px' }}>Dine in a palace-inspired setting that reflects Jaipur's rich heritage.</p>
-          </div>
-          <div className="glass" style={{ padding: '50px 40px', borderRadius: '30px', textAlign: 'center' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>☕</div>
-            <h3>Bespoke Brews</h3>
-            <p style={{ color: 'var(--text-muted)', marginTop: '15px' }}>Sourced from the finest estates and roasted to royal perfection.</p>
-          </div>
-          <div className="glass" style={{ padding: '50px 40px', borderRadius: '30px', textAlign: 'center' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>👨‍🍳</div>
-            <h3>Heritage Chefs</h3>
-            <p style={{ color: 'var(--text-muted)', marginTop: '15px' }}>Mastering recipes passed down through generations of royal kitchens.</p>
-          </div>
+
+      <section style={{ background: 'var(--bg-dark)', padding: '140px 0 20px' }}>
+        <div className="container">
+          <h2 style={{ textAlign: 'center', marginBottom: '10px', color: 'var(--text-bright)', fontSize: '3rem' }}>What Makes Us Special</h2>
+          <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>Discover the pillars of our royal experience</p>
+        </div>
+        <SkewCards />
+      </section>
+
+      <section style={{ background: 'var(--bg-dark)', padding: '120px 0 60px', position: 'relative' }} className="pt-20">
+        <div className="container">
+          <h2 style={{ textAlign: 'center', marginBottom: '10px', color: 'var(--text-bright)', fontSize: '3.5rem', fontWeight: 800 }}>Happy customer</h2>
+          <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto', marginBottom: '60px', fontSize: '1.1rem' }}>What our patrons say about their royal experience</p>
+          <TeamShowcase />
         </div>
       </section>
 
