@@ -31,10 +31,10 @@ const Home = () => {
         <SkewCards />
       </section>
 
-      <section style={{ background: 'var(--bg-dark)', padding: '120px 0 60px', position: 'relative' }} className="pt-20">
+      <section style={{ background: 'var(--bg-dark)', padding: '100px 0' }}>
         <div className="container">
-          <h2 style={{ textAlign: 'center', marginBottom: '10px', color: 'var(--text-bright)', fontSize: '3.5rem', fontWeight: 800 }}>Happy customer</h2>
-          <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto', marginBottom: '60px', fontSize: '1.1rem' }}>What our patrons say about their royal experience</p>
+          <h2 style={{ textAlign: 'center', marginBottom: '10px', color: 'var(--text-bright)', fontSize: '3rem' }}>Happy customer</h2>
+          <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto', marginBottom: '40px' }}>What our patrons say about their royal experience</p>
           <TeamShowcase />
         </div>
       </section>

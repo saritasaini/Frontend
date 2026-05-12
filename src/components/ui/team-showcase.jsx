@@ -6,43 +6,43 @@ const DEFAULT_MEMBERS = [
   {
     id: '1',
     name: 'Chadrack',
-    role: 'DIRECTOR OF PHOTOGRAPHY',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=400&auto=format&fit=crop',
+    role: 'director of photography',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQFnmLdpZW78yA/profile-displayphoto-scale_200_200/B4DZvM8NB2JMAY-/0/1768669895649?e=2147483647&v=beta&t=5VGAB-2gYupLNaHvJHECollR25THd-3oR5wngGlQiY4',
     social: { twitter: '#', linkedin: '#', behance: '#' },
   },
   {
     id: '2',
     name: 'Mak VieSAinte',
     role: 'FOUNDER',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&h=400&auto=format&fit=crop',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2vnSxNNVGZV2MXRjlGELl-NgLl5kXdpDR6A&s',
     social: { twitter: '#', linkedin: '#' },
   },
   {
     id: '3',
     name: 'Osiris Balonga',
     role: 'LEAD FRONT-END',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=400&auto=format&fit=crop',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQGVqrPPAGHtoQ/profile-displayphoto-scale_200_200/B4DZwhAkjaHwAY-/0/1770080338529?e=2147483647&v=beta&t=q-_6p1VCJ8NN8eHj9zUFwJZds_XpKez9Hy14SAIDp4M',
     social: { twitter: '#', linkedin: '#' },
   },
   {
     id: '4',
     name: 'Jacques',
     role: 'PRODUCT OWNER',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&auto=format&fit=crop',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQE-Z7-S1LSYNQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724143166545?e=2147483647&v=beta&t=6IPCwgOzblGt4p2fEdnY74gMbLyRHii5Ite3A39qQsY',
     social: { linkedin: '#' },
   },
   {
     id: '5',
     name: 'Riche Makso',
     role: 'CTO - PRODUCT DESIGNER',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&h=400&auto=format&fit=crop',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQEkTAbZLlSrLg/profile-displayphoto-scale_200_200/B4DZoHdu8BGgAY-/0/1761061833315?e=2147483647&v=beta&t=Rg1dBTvq9X2heyhuhBwG2DsEkG65v0vQ35hF2FSeYns',
     social: { twitter: '#', linkedin: '#' },
   },
   {
     id: '6',
     name: 'Jemima',
     role: 'MAKE-UP ARTISTE',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&h=400&auto=format&fit=crop',
+    image: 'https://i.pravatar.cc/400?img=16',
     social: { instagram: '#' },
   },
 ];
@@ -55,16 +55,16 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }) {
   const col3 = members.filter((_, i) => i % 3 === 2);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 select-none w-full max-w-6xl mx-auto py-12 px-4 md:px-8 font-sans overflow-hidden">
+    <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10 lg:gap-14 select-none w-full max-w-5xl mx-auto py-8 px-4 md:px-6 font-sans">
       {/* ── Left: photo grid ── */}
-      <div className="flex gap-3 md:gap-4 flex-shrink-0">
+      <div className="flex gap-2 md:gap-3 flex-shrink-0 overflow-x-auto pb-1 md:pb-0">
         {/* Column 1 */}
-        <div className="flex flex-col gap-3 md:gap-4">
+        <div className="flex flex-col gap-2 md:gap-3">
           {col1.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[100px] h-[110px] sm:w-[130px] sm:h-[140px] md:w-[160px] md:h-[180px]"
+              className="w-[110px] h-[120px] sm:w-[130px] sm:h-[140px] md:w-[155px] md:h-[165px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -72,12 +72,12 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }) {
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-3 md:gap-4 mt-12 md:mt-16">
+        <div className="flex flex-col gap-2 md:gap-3 mt-[48px] sm:mt-[56px] md:mt-[68px]">
           {col2.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[110px] h-[120px] sm:w-[145px] sm:h-[155px] md:w-[180px] md:h-[200px]"
+              className="w-[122px] h-[132px] sm:w-[145px] sm:h-[155px] md:w-[172px] md:h-[182px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -85,12 +85,12 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }) {
         </div>
 
         {/* Column 3 */}
-        <div className="flex flex-col gap-3 md:gap-4 mt-6 md:mt-8">
+        <div className="flex flex-col gap-2 md:gap-3 mt-[22px] sm:mt-[26px] md:mt-[32px]">
           {col3.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[105px] h-[115px] sm:w-[135px] sm:h-[145px] md:w-[170px] md:h-[190px]"
+              className="w-[115px] h-[125px] sm:w-[136px] sm:h-[146px] md:w-[162px] md:h-[172px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -98,8 +98,8 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }) {
         </div>
       </div>
 
-      {/* ── Right: member name list*/}
-      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-col gap-6 md:gap-8 pt-4 lg:pt-12 flex-1 w-full">
+      {/* ── Right: member name list ── */}
+      <div className="flex flex-col sm:grid sm:grid-cols-2 md:flex md:flex-col gap-4 md:gap-5 pt-0 md:pt-2 flex-1 w-full">
         {members.map((member) => (
           <MemberRow
             key={member.id}
@@ -114,7 +114,7 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }) {
 }
 
 /* ─────────────────────────────────────────
-   Photo card 
+   Photo card
 ───────────────────────────────────────── */
 
 function PhotoCard({ member, className, hoveredId, onHover }) {
@@ -124,10 +124,9 @@ function PhotoCard({ member, className, hoveredId, onHover }) {
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 transition-all duration-500 shadow-xl',
+        'overflow-hidden rounded-xl cursor-pointer flex-shrink-0 transition-opacity duration-400',
         className,
-        isDimmed ? 'opacity-40 scale-95 blur-[1px]' : 'opacity-100 scale-100',
-        isActive ? 'ring-2 ring-primary shadow-primary/20' : 'ring-1 ring-white/10'
+        isDimmed ? 'opacity-60' : 'opacity-100',
       )}
       onMouseEnter={() => onHover(member.id)}
       onMouseLeave={() => onHover(null)}
@@ -135,10 +134,9 @@ function PhotoCard({ member, className, hoveredId, onHover }) {
       <img
         src={member.image}
         alt={member.name}
-        className="w-full h-full object-cover transition-all duration-700"
+        className="w-full h-full object-cover transition-[filter] duration-500"
         style={{
-          filter: isActive ? 'grayscale(0) brightness(1.1)' : 'grayscale(1) brightness(0.7)',
-          transform: isActive ? 'scale(1.1)' : 'scale(1)'
+          filter: isActive ? 'grayscale(0) brightness(1)' : 'grayscale(1) brightness(0.77)',
         }}
       />
     </div>
@@ -152,30 +150,33 @@ function PhotoCard({ member, className, hoveredId, onHover }) {
 function MemberRow({ member, hoveredId, onHover }) {
   const isActive = hoveredId === member.id;
   const isDimmed = hoveredId !== null && !isActive;
-  const hasSocial = member.social?.twitter || member.social?.linkedin || member.social?.instagram || member.social?.behance;
+  const hasSocial =
+    member.social?.twitter ??
+    member.social?.linkedin ??
+    member.social?.instagram ??
+    member.social?.behance;
 
   return (
     <div
       className={cn(
-        'cursor-pointer transition-all duration-300 group',
-        isDimmed ? 'opacity-30 translate-x-0' : 'opacity-100 translate-x-2',
-        isActive && 'translate-x-4'
+        'cursor-pointer transition-opacity duration-300',
+        isDimmed ? 'opacity-50' : 'opacity-100',
       )}
       onMouseEnter={() => onHover(member.id)}
       onMouseLeave={() => onHover(null)}
     >
-      {/* Name + social*/}
-      <div className="flex items-center gap-4">
+      {/* Name + social */}
+      <div className="flex items-center gap-2.5">
         <span
           className={cn(
-            'h-px bg-primary transition-all duration-500',
-            isActive ? 'w-12' : 'w-6 opacity-50',
+            'w-4 h-3 rounded-[5px] flex-shrink-0 transition-all duration-300',
+            isActive ? 'bg-foreground w-5' : 'bg-foreground/25',
           )}
         />
         <span
           className={cn(
-            'text-lg md:text-2xl font-bold tracking-tight transition-colors duration-300',
-            isActive ? 'text-primary' : 'text-white/90',
+            'text-base md:text-[18px] font-semibold leading-none tracking-tight transition-colors duration-300',
+            isActive ? 'text-foreground' : 'text-foreground/80',
           )}
         >
           {member.name}
@@ -185,23 +186,59 @@ function MemberRow({ member, hoveredId, onHover }) {
         {hasSocial && (
           <div
             className={cn(
-              'flex items-center gap-3 ml-2 transition-all duration-300',
+              'flex items-center gap-1.5 ml-0.5 transition-all duration-200',
               isActive
                 ? 'opacity-100 translate-x-0'
-                : 'opacity-0 -translate-x-4 pointer-events-none',
+                : 'opacity-0 -translate-x-2 pointer-events-none',
             )}
           >
             {member.social?.twitter && (
-              <a href={member.social.twitter} className="text-white/60 hover:text-primary transition-colors"><FaTwitter size={16} /></a>
+              <a
+                href={member.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-foreground/10 transition-all duration-150 hover:scale-110"
+                title="X / Twitter"
+              >
+                <FaTwitter size={10} />
+              </a>
             )}
             {member.social?.linkedin && (
-              <a href={member.social.linkedin} className="text-white/60 hover:text-primary transition-colors"><FaLinkedinIn size={16} /></a>
+              <a
+                href={member.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-foreground/10 transition-all duration-150 hover:scale-110"
+                title="LinkedIn"
+              >
+                <FaLinkedinIn size={10} />
+              </a>
             )}
             {member.social?.instagram && (
-              <a href={member.social.instagram} className="text-white/60 hover:text-primary transition-colors"><FaInstagram size={16} /></a>
+              <a
+                href={member.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-foreground/10 transition-all duration-150 hover:scale-110"
+                title="Instagram"
+              >
+                <FaInstagram size={10} />
+              </a>
             )}
             {member.social?.behance && (
-              <a href={member.social.behance} className="text-white/60 hover:text-primary transition-colors"><FaBehance size={16} /></a>
+              <a
+                href={member.social.behance}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-foreground/10 transition-all duration-150 hover:scale-110"
+                title="Behance"
+              >
+                <FaBehance size={10} />
+              </a>
             )}
           </div>
         )}
